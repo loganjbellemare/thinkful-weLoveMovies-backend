@@ -136,7 +136,7 @@ exports.seed = function (knex) {
         "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_Ratio0.6791_AL_.jpg",
     },
     {
-      title: "Mad Max: Fury Roud",
+      title: "Mad Max: Fury Road",
       runtime_in_minutes: 120,
       rating: "R",
       description:
