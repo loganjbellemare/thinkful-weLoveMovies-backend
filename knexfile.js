@@ -1,6 +1,6 @@
 const path = require("path");
 
-require("dotenv").config();
+require("dotenv");
 
 const { DATABASE_URL } = process.env;
 
@@ -28,7 +28,7 @@ module.exports = {
     },
     pool: { min: 0, max: 5 },
     migrations: {
-      tableName: "knex_migrations",
+      directory: path.join(__dirname, "src", "db", "migrations"),
     },
     seeds: {
       directory: path.join(__dirname, "src", "db", "seeds"),
