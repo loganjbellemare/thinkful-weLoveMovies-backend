@@ -1,7 +1,6 @@
 const path = require("path");
 
-const dotenv = require("dotenv").config();
-dotenv.load();
+require("dotenv").config();
 
 const { DATABASE_URL } = process.env;
 
