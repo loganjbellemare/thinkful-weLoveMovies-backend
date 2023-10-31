@@ -1,6 +1,7 @@
 const path = require("path");
 
-require("dotenv").config();
+const dotenv = require("dotenv").config();
+dotenv.load();
 
 const { DATABASE_URL } = process.env;
 
@@ -19,10 +20,16 @@ module.exports = {
 
   production: {
     client: "postgresql",
-    connection: DATABASE_URL,
+    connection: {
+      host: process.env.DB_HOST,
+      user: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      db: process.env.DB_NAME,
+      charset: "utf8",
+    },
     pool: { min: 0, max: 5 },
     migrations: {
-      directory: path.join(__dirname, "src", "db", "migrations"),
+      tableName: "knex_migrations",
     },
     seeds: {
       directory: path.join(__dirname, "src", "db", "seeds"),
